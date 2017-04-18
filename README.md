@@ -6,6 +6,7 @@ Startproject voor Pong in Typescript
 
 ### Opdracht
 
+- Bestudeer de [voorbeeldcode](https://github.com/HR-CMGT/PRG04-Week3-examples)
 - Maak een ball instance aan in game.ts
 - De game loop roept de move() functie van de ball aan
 - Hoe weet de bal of hij uit het scherm gaat? Wat moet er dan gebeuren?
@@ -21,5 +22,6 @@ Startproject voor Pong in Typescript
 - Collision detection
 - Keyboard input
 - Game Loop
+- Callback scope
 
 [Voorbeeldcode](https://github.com/HR-CMGT/PRG04-Week3-examples)
