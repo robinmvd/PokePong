@@ -12,10 +12,11 @@ Startproject voor Pong in Typescript
 - Hoe weet de bal of hij uit het scherm gaat? Wat moet er dan gebeuren?
 - Laat 20 ballen over het scherm bewegen
 - Maak de paddle.ts class af
-- Maak twee paddle instances aan in game.ts
-- Beweeg de paddles met het toetsenbord
-- Voeg in game.ts collision detection toe tussen de balls en de paddles
+- Voeg keyboard input toe aan de paddle.ts class
+- Maak een paddle instance aan in game.ts
+- Voeg in game.ts collision detection toe tussen de balls en de paddle
 - Wat moet er gebeuren als een ball een paddle raakt?
+- Kan je twee paddles toevoegen die elk hun eigen keyboard controls hebben?
 
 ### Voorbeeldcode
 
