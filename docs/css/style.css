@@ -10,9 +10,12 @@ body {
 body * {
     position: absolute;
     display: block;
-    margin:0px; padding:0px;
     box-sizing: border-box;
     background-repeat: no-repeat;
+}
+
+score {
+    margin:15px;
 }
 
 ball {
