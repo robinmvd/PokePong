@@ -5,8 +5,8 @@ class Ball {
     private y : number
     
     constructor() {
-        this.div = document.createElement("ball");
-        document.body.appendChild(this.div);
+        this.div = document.createElement("ball")
+        document.body.appendChild(this.div)
 
         this.x = Math.random() * window.innerWidth
         this.y = Math.random() * window.innerHeight
