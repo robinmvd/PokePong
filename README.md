@@ -18,10 +18,10 @@ Bestudeer de opzet van het project: game roept de update functie van de bal aan.
 
 De breedte en hoogte van het scherm kan je opvragen met `window.innerWidth` en `window.innerHeight`. 
 
-- Controleer of de positie van de bal binnen het window is.
-- Als de bal rechts of links buiten beeld gaat, wissel je de `xspeed` van 1 naar -1, en terug.
-- Als de bal boven of onder buiten beeld gaat, wissel je de `yspeed` van 1 naar -1, en terug.
-- Kijk of de bal nu binnen het beeld blijft stuiteren.
+- Controleer of de positie van de bal binnen het window is met `if (this.x ...)`.
+- Als de bal rechts of links buiten beeld gaat, dan moet je de xspeed omdraaien. Dit doe door de xspeed te vermenigvuldigen met -1:  `this.xspeed *= -1`.
+- Doe hetzelfde met de yspeed als de bal boven of onder uit beeld gaat.
+- Controleer of de bal nu continu door het beeld blijft stuiteren, of dat je nog iets moet aanpassen.
 
 ### Meerdere ballen
 
@@ -33,13 +33,20 @@ De breedte en hoogte van het scherm kan je opvragen met `window.innerWidth` en `
 
 - Het project bevat een `paddle.ts` class. Voeg een paddle instance toe aan Game.ts!
 - Bestudeer het [voorbeeld van collision detection](https://github.com/HR-CMGT/Typescript/blob/master/snippets/collision.md)
-- Voeg in game.ts collision detection toe tussen de balls en de paddle
-- Wat moet er gebeuren als een ball een paddle raakt?
+- Voeg in game.ts collision detection toe tussen de balls en de paddle. 
+- Toon een bericht in de console als de bal een paddle raakt.
+- Wat moet er verder nog gebeuren als een ball een paddle raakt?
 
 ### De game af maken
 
-- Kan je twee paddles toevoegen die elk hun eigen keyboard controls hebben?
-- Kan je een score weergeven? Wanneer is het game over?
+- De bal mag alleen stuiteren tegen de bovenkant en onderkant van het scherm, en tegen de paddle.
+- Als de bal tegen de paddle stuitert krijg je een punt.
+- Als de bal links buiten beeld gaat, is het game over. Rechts stuitert de bal nog wel terug.
+- Kan je de bal steeds sneller laten gaan, naar mate die vaker geraakt wordt?
+- Toon de score.
+- Kan je twee paddles toevoegen die elk hun eigen keyboard controls hebben? 
+- Kan je pong spelen met meerdere ballen tegelijk?
+
 
 ### Voorbeeldcode
 
