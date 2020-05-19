@@ -12,9 +12,11 @@ class Paddle {
 
     constructor() {
         this.div = document.createElement("paddle")
-        document.body.appendChild(this.div)
 
-        this.upkey = 87
+        let game = document.getElementsByTagName("game")[0]
+        game.appendChild(this.div)
+
+        this.upkey   = 87
         this.downkey = 83
 
         this.x = 0
@@ -29,6 +31,9 @@ class Paddle {
     }
 
     private onKeyDown(e: KeyboardEvent): void {
+        // Hiermee kan je checken welke keycode achter een bepaalde toets zit. 
+        console.log(e.keyCode)
+
         switch (e.keyCode) {
             case this.upkey:
                 this.upSpeed = 5

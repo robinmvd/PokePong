@@ -6,7 +6,9 @@ class Ball {
     
     constructor() {
         this.div = document.createElement("ball")
-        document.body.appendChild(this.div)
+
+        let game = document.getElementsByTagName("game")[0]
+        game.appendChild(this.div)
 
         this.x = Math.random() * window.innerWidth
         this.y = Math.random() * window.innerHeight
