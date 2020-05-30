@@ -2,6 +2,7 @@ class Game {
     
     private balls : Ball[] = []
     private paddle : Paddle
+    private score : number = 0
     
     constructor() {
 
@@ -21,6 +22,7 @@ class Game {
             if (this.checkCollision(ball.getRectangle(), this.paddle.getRectangle())) {
                 console.log("BOTSING MET PADDLE")
                 ball.bounceX()
+                this.addPoint()
             }
         }
 
@@ -47,6 +49,13 @@ class Game {
             b.left <= a.right &&
             a.top <= b.bottom &&
             b.top <= a.bottom)
+     }
+
+     private addPoint() {
+         let score = document.getElementsByTagName("score")[0]
+
+         this.score++
+            score.innerHTML = "Score: "+this.score
      }
 } 
 
