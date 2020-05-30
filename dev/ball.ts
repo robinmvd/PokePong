@@ -14,6 +14,10 @@ class Ball {
     public get y(): number          { return this._y }
     public get div(): HTMLElement   { return this._div}
 
+    public getRectangle() {
+        return this.div.getBoundingClientRect()
+    }
+
     
     constructor() {
         this._div = document.createElement("ball")
