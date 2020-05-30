@@ -1,28 +1,37 @@
 class Game {
     
-    private ball : Ball
+    private balls : Ball[] = []
     
     constructor() {
-        this.ball = new Ball()
+
+        for (let i = 0; i < 10; i++) {
+            this.balls.push(new Ball())
+        }
+
         this.gameLoop()
     }
     
     private gameLoop(){
-        this.ball.update()
+        for (const ball of this.balls) {
+            ball.update()
 
-        if(this.ball.x < 0) {
-            //xspeed 'omgeklapt' moet worden (van positief naar negatief en andersom)
-            this.ball.bounceX()
-
-        } else if(this.ball.x + this.ball.div.clientWidth > window.innerWidth){
-            this.ball.bounceX()
-        } else if(this.ball.y < 0) {
-            this.ball.bounceY()
-        } else if(this.ball.y + this.ball.div.clientHeight > window.innerHeight) {
-            this.ball.bounceY()
+            this.checkBallBounce(ball)
         }
 
         requestAnimationFrame(()=>this.gameLoop())
+    }
+
+    private checkBallBounce(ball : Ball) {
+        if(ball.x < 0) {
+            //xspeed 'omgeklapt' moet worden (van positief naar negatief en andersom)
+            ball.bounceX()
+        } else if(ball.x + ball.div.clientWidth > window.innerWidth){
+            ball.bounceX()
+        } else if(ball.y < 0) {
+            ball.bounceY()
+        } else if(ball.y + ball.div.clientHeight > window.innerHeight) {
+            ball.bounceY()
+        }
     }
 } 
 
