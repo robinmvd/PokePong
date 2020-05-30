@@ -30,10 +30,7 @@ class Game {
     }
 
     private checkBallBounce(ball : Ball) {
-        if(ball.x < 0) {
-            //xspeed 'omgeklapt' moet worden (van positief naar negatief en andersom)
-            ball.bounceX()
-        } else if(ball.x + ball.div.clientWidth > window.innerWidth){
+        if(ball.x + ball.div.clientWidth > window.innerWidth){
             ball.bounceX()
         } else if(ball.y < 0) {
             ball.bounceY()
