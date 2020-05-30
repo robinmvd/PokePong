@@ -28,7 +28,7 @@ class Ball {
         this._x = Math.random() * window.innerWidth
         this._y = Math.random() * window.innerHeight
 
-        this.xSpeed = 2
+        this.xSpeed = -5
         this.ySpeed = -3
         
     }
@@ -43,6 +43,7 @@ class Ball {
 
     public bounceX() {
         this.xSpeed *= -1
+        this.xSpeed *= 1.5 //snelheid vergroten met 150%
     }
 
     public bounceY() {
