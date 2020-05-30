@@ -30,10 +30,13 @@ class Game {
     }
 
     private checkBallBounce(ball : Ball) {
+        // Right
         if(ball.x + ball.div.clientWidth > window.innerWidth){
             ball.bounceX()
+        // Top
         } else if(ball.y < 0) {
             ball.bounceY()
+        // Bottom    
         } else if(ball.y + ball.div.clientHeight > window.innerHeight) {
             ball.bounceY()
         }
