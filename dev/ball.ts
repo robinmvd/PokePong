@@ -1,20 +1,28 @@
 class Ball {
     
-    private div : HTMLElement
-    private x : number = 0
-    private y : number = 0
+    // alle private variablen = 'Fields'
+    private _div: HTMLElement
+    
+    private _x : number = 0
+    private _y : number = 0
+
     private xSpeed : number = 0
     private ySpeed : number = 0
 
+    // Properties
+    public get x(): number          { return this._x }
+    public get y(): number          { return this._y }
+    public get div(): HTMLElement   { return this._div}
+
     
     constructor() {
-        this.div = document.createElement("ball")
+        this._div = document.createElement("ball")
 
         let game = document.getElementsByTagName("game")[0]
-        game.appendChild(this.div)
+        game.appendChild(this._div)
 
-        this.x = Math.random() * window.innerWidth
-        this.y = Math.random() * window.innerHeight
+        this._x = Math.random() * window.innerWidth
+        this._y = Math.random() * window.innerHeight
 
         this.xSpeed = 2
         this.ySpeed = -3
@@ -23,9 +31,17 @@ class Ball {
     
     public update() : void {
 
-        this.x += this.xSpeed
-        this.y += this.ySpeed
+        this._x += this.xSpeed
+        this._y += this.ySpeed
 
-        this.div.style.transform = `translate(${this.x}px, ${this.y}px)`
+        this._div.style.transform = `translate(${this._x}px, ${this._y}px)`
+    }
+
+    public bounceX() {
+        this.xSpeed *= -1
+    }
+
+    public bounceY() {
+        this.ySpeed *= -1
     }
 }
