@@ -2,6 +2,7 @@ class Game {
     
     private balls : Ball[] = []
     private paddle : Paddle
+    private paddle2 : Paddle
     private score : number = 0
     
     constructor() {
@@ -10,7 +11,9 @@ class Game {
             this.balls.push(new Ball())
         }
 
-        this.paddle = new Paddle()
+        this.paddle = new Paddle(0, 87, 83)
+        this.paddle2 = new Paddle(window.innerWidth, 38, 40)
+
         this.gameLoop()
     }
     
@@ -27,19 +30,18 @@ class Game {
         }
 
         this.paddle.update()
+        this.paddle2.update()
 
         requestAnimationFrame(()=>this.gameLoop())
     }
 
     private checkBallBounce(ball : Ball) {
-        // Right
-        if(ball.x + ball.div.clientWidth > window.innerWidth){
-            ball.bounceX()
-        // Top
-        } else if(ball.y < 0) {
+       // Top
+        if(ball.y < 0) {
             ball.bounceY()
-        // Bottom    
-        } else if(ball.y + ball.div.clientHeight > window.innerHeight) {
+        } 
+        // Bottom
+        else if(ball.y + ball.div.clientHeight > window.innerHeight) {
             ball.bounceY()
         }
     }

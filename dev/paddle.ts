@@ -10,16 +10,18 @@ class Paddle {
     private downSpeed: number = 0
     private upSpeed: number = 0
 
-    constructor() {
+    constructor(x : number, upKey : number, downKey : number) {
         this.div = document.createElement("paddle")
 
         let game = document.getElementsByTagName("game")[0]
         game.appendChild(this.div)
 
-        this.upkey   = 87
-        this.downkey = 83
+        // w = 87, s = 83, up = 38, down = 40
+        this.upkey   = upKey // w
+        this.downkey = downKey // s
 
-        this.x = 0
+        if(x != 0) x -= this.div.clientWidth
+        this.x = x
         this.y = 200
 
         window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e))
